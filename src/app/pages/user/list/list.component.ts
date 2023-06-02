@@ -12,14 +12,24 @@ export class ListComponent implements OnInit {
 
   }
   users: any;
-  page=1;
-  perPage=6
+  page = 1;
+  perPage = 6
 
   ngOnInit(): void {
-    this.userService.getUsersWithPagination(this.page,this.perPage).subscribe(data => {
+    this.userService.getUsersWithPagination(this.page, this.perPage).subscribe(data => {
       this.users = data
-      console.log(this.users );
-      
+      console.log(this.users);
+
+
+    })
+  }
+
+  deleteUsers(user: any) {
+    this.userService.deleteUser(user.id).subscribe(data => {
+      console.log("Done");
+
+    }, err => {
+      console.log(err);
 
     })
   }

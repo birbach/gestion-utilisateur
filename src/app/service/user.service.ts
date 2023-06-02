@@ -17,4 +17,9 @@ export class UserService {
   getUsersWithPagination(page: number, perPage: number): Observable<any[]> {
     return this.http.get<any[]>(this.apiLink + '?page=' + page + '&per_page=' + perPage);
   }
+
+  deleteUser(id:number): Observable<any>{
+    return this.http.delete<any>(this.apiLink+'/'+id);
+
+  }
 }
