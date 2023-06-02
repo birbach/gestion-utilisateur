@@ -1,0 +1,23 @@
+.sidebar {
+  background-color: #949ba0;
+  color: black;
+  height: 100%;
+  padding: 20px;
+
+  .list-unstyled {
+    li {
+      a {
+        color: black;
+        text-decoration: none;
+        display: block;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #495057;
+        }
+      }
+    }
+  }
+}
