@@ -7,13 +7,8 @@ import { HeaderComponent } from './element/header/header.component';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './element/menu/menu.component';
 import { HomeComponent } from './pages/home/home.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClientModule } from '@angular/common/http';
 
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,16 +20,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
-    })
-    
+    HttpClientModule
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })
